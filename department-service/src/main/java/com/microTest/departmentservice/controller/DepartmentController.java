@@ -1,5 +1,6 @@
 package com.microTest.departmentservice.controller;
 
+import com.microTest.departmentservice.client.EmployeeClient;
 import com.microTest.departmentservice.model.Department;
 import com.microTest.departmentservice.repository.DepartmentRepository;
 import org.slf4j.Logger;
@@ -18,6 +19,8 @@ public class DepartmentController {
     @Autowired
     private DepartmentRepository repository;
 
+    @Autowired
+    private EmployeeClient employeeClient;
     @PostMapping
     public Department add(@RequestBody Department department){
         LOGGER.info("Department add {}",department);
